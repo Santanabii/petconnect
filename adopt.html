@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawConnect · Responsive Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-[#FCF8F1] font-sans">
+
+    <nav class="bg-[#F9F1E7] border-b border-[#E5D3BC] sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="index.html" class="flex items-center gap-2">
+            <i class="fas fa-paw text-2xl text-[#A67C52]"></i>
+            <span class="text-2xl font-bold text-[#5C3E2E]">PawConnect</span>
+          </a>
+
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              href="index.html"
+              class="text-[#5C3E2E] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="adopt.html"
+              class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
+              >Adopt</a
+            >
+            <a
+              href="pets.html"
+              class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
+              >Pets</a
+            >
+            <a
+              href="howitworks.html"
+              class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
+              >How It Works</a
+            >
+            <a
+              href="contact.html"
+              class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
+              >Contact</a
+            >
+            <a
+              href="adopt.html#application"
+              class="bg-[#A67C52] hover:bg-[#5C3E2E] text-white px-5 py-2 rounded-lg text-sm font-bold transition-all shadow-md"
+              >Adopt Me</a
+            >
+          </div>
+
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-button"
+              class="text-[#5C3E2E] focus:outline-none p-2"
+            >
+              <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-[#F9F1E7] border-t border-[#E5D3BC] pb-4 px-4 space-y-2"
+      >
+        <a
+          href="index.html"
+          class="block py-3 px-4 text-[#5C3E2E] font-semibold bg-[#FCF8F1] rounded-lg"
+          >Home</a
+        >
+        <a
+          href="adopt.html"
+          class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg"
+          >Adopt</a
+        >
+        <a
+          href="pets.html"
+          class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg"
+          >Pets</a>
+        <a
+          href="howitworks.html"
+          class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg"
+          >How It Works</a
+        >
+        <a
+          href="contact.html"
+          class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg"
+          >Contact</a
+        >
+        <div class="pt-2">
+          <a
+            href="adopt.html#application"
+            class="block text-center bg-[#A67C52] text-white py-3 rounded-lg font-bold"
+            >Adopt Me</a
+          >
+        </div>
+      </div>
+    </nav>
+    <main class="max-w-3xl mx-auto py-12 px-6">
+        
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-extrabold mb-4">Adoption Application</h1>
+            <p class="text-[#7D5A44]">Fill out the details below to start the journey of bringing a new friend home.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-xl border border-[#E5D3BC] overflow-hidden">
+            <div class="bg-[#A67C52] p-4 text-white text-center text-sm font-bold tracking-widest uppercase">
+                Step 1: Your Information
+            </div>
+            
+            <form id="application" action="#thankyou.html" method="get" class="p-8 md:p-12 space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="block text-sm font-bold text-[#5C3E2E]">First Name</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-xl border border-[#E5D3BC] focus:ring-2 focus:ring-[#A67C52] focus:outline-none bg-[#FCF8F1]/50" placeholder="e.g. Alex">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block text-sm font-bold text-[#5C3E2E]">Last Name</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-xl border border-[#E5D3BC] focus:ring-2 focus:ring-[#A67C52] focus:outline-none bg-[#FCF8F1]/50" placeholder="e.g. Smith">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="block text-sm font-bold text-[#5C3E2E]">Email Address</label>
+                        <input type="email" required class="w-full px-4 py-3 rounded-xl border border-[#E5D3BC] focus:ring-2 focus:ring-[#A67C52] focus:outline-none bg-[#FCF8F1]/50" placeholder="alex@example.com">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="block text-sm font-bold text-[#5C3E2E]">Phone Number</label>
+                        <input type="tel" class="w-full px-4 py-3 rounded-xl border border-[#E5D3BC] focus:ring-2 focus:ring-[#A67C52] focus:outline-none bg-[#FCF8F1]/50" placeholder="(555) 000-0000">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="block text-sm font-bold text-[#5C3E2E]">Who are you interested in?</label>
+                    <select class="w-full px-4 py-3 rounded-xl border border-[#E5D3BC] focus:ring-2 focus:ring-[#A67C52] focus:outline-none bg-[#FCF8F1]/50 appearance-none">
+                        <option disabled selected>Choose a furry friend...</option>
+                        <option>Luna (Cat)</option>
+                        <option>Buddy (Dog)</option>
+                        <option>Charlie (Dog)</option>
+                        <option>Not sure yet / General Inquiry</option>
+                    </select>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="block text-sm font-bold text-[#5C3E2E]">Tell us about your home life</label>
+                    <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-[#E5D3BC] focus:ring-2 focus:ring-[#A67C52] focus:outline-none bg-[#FCF8F1]/50" placeholder="Mention things like: Yard space, children, or other pets..."></textarea>
+                </div>
+
+                <div class="flex items-start gap-3 pt-2">
+                    <input type="checkbox" id="terms" class="mt-1 accent-[#A67C52] h-4 w-4">
+                    <label for="terms" class="text-sm text-[#7D5A44]">
+                        I understand that this is just an application and does not guarantee adoption. I agree to a home visit if required.
+                    </label>
+                </div>
+
+                <button id="thankyou" type="submit" class="w-full bg-[#5C3E2E] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#A67C52] transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    Send My Application
+                </button>
+            </form>
+        </div>
+
+        <p class="text-center mt-8 text-[#7D5A44] text-sm">
+            Having trouble? <a href="contact.html">Contact our support team</a>.
+        </p>
+    </main>
+    <script src="script.js"></script>
+</body>
+    </html>
