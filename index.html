@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PawConnect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="bg-[#FCF8F1] font-sans">
+    <nav class="bg-[#F9F1E7] border-b border-[#E5D3BC] sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="index.html" class="flex items-center gap-2">
+            <i class="fas fa-paw text-2xl text-[#A67C52]"></i>
+            <span class="text-2xl font-bold text-[#5C3E2E]">PawConnect</span>
+          </a>
+
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              href="index.html"
+              class="text-[#5C3E2E] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="adopt.html"
+              class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
+              >Adopt</a
+            >
+            <a
+              href="pets.html"
+              class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
+              >Pets</a
+            >
+            <a
+              href="howitworks.html"
+              class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
+              >How It Works</a
+            >
+            <a
+              href="contact.html"
+              class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
+              >Contact</a
+            >
+            <a
+              href="adopt.html"
+              class="bg-[#A67C52] hover:bg-[#5C3E2E] text-white px-5 py-2 rounded-lg text-sm font-bold transition-all shadow-md"
+              >Adopt Me</a
+            >
+          </div>
+
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-button"
+              class="text-[#5C3E2E] focus:outline-none p-2"
+            >
+              <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-[#F9F1E7] border-t border-[#E5D3BC] pb-4 px-4 space-y-2"
+      >
+        <a
+          href="index.html"
+          class="block py-3 px-4 text-[#5C3E2E] font-semibold bg-[#FCF8F1] rounded-lg"
+          >Home</a
+        >
+        <a
+          href="adopt.html"
+          class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg"
+          >Adopt</a
+        >
+        <a
+          href="pets.html"
+          class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg"
+          >Pets</a>
+        <a
+          href="howitworks.html"
+          class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg"
+          >How It Works</a
+        >
+        <a
+          href="contact.html"
+          class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg"
+          >Contact</a
+        >
+        <div class="pt-2">
+          <a
+            href="adopt.html"
+            class="block text-center bg-[#A67C52] text-white py-3 rounded-lg font-bold"
+            >Adopt Me</a
+          >
+        </div>
+      </div>
+    </nav>
+    <header class="relative bg-[#F9F1E7] py-20 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+                    Because every <span class="text-[#A67C52]">paw</span> deserves a home.
+                </h1>
+                <p class="text-lg text-[#7D5A44] mb-8 max-w-lg">
+                    We connect thousands of shelter animals with loving families. Browse our furry friends and find the perfect match for your home today.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <button id="start-adopting" class="bg-[#5C3E2E] text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-[#452e22] transition-all">Start Adopting</button>
+                    <button id="how-it-works" class="border-2 border-[#A67C52] text-[#A67C52] px-8 py-4 rounded-xl font-bold hover:bg-[#A67C52] hover:text-white transition-all">How It Works</button>
+                </div>
+            </div>
+            <div class="flex-1 w-full max-w-md">
+                <div class="aspect-square bg-[#E5D3BC] rounded-3xl flex items-center justify-center relative shadow-inner">
+                     <img src="Images/landing.jpg" alt="pictures of pets" class="w-full h-full object-cover rounded-3xl transform hover:scale-105 transition-transform">
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="max-w-7xl mx-auto py-24 px-6">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="text-3xl font-bold mb-2">Meet Our Residents</h2>
+                <p class="text-[#7D5A44]">These cuties are waiting for their forever home.</p>
+            </div>
+            <a href="pets.html" class="text-[#603808] font-bold hover:underline hidden sm:block">View All Pets →</a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#E5D3BC]">
+                <div class="h-64 bg-[#E5D3BC] flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <img src="Images/sky2.jpg" alt="An image of a white maltese dog" class="w-full h-full object-cover rounded-xl">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-xl font-bold">Meet Sky</h3>
+                        <span class="bg-[#F9F1E7] text-[#A67C52] text-xs font-bold px-3 py-1 rounded-full uppercase">text</span>
+                    </div>
+                    <p class="text-sm text-[#7D5A44] mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Location</p>
+                    <button class="w-full bg-[#FCF8F1] border border-[#E5D3BC] text-[#5C3E2E] py-2 rounded-lg font-semibold hover:bg-[#5C3E2E] hover:text-white transition-colors">Information</button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#E5D3BC]">
+                <div class="h-64 bg-[#E5D3BC] flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <img src="Images/coco.jpg" alt="An image of a brown cat" class="w-full h-full object-cover rounded-xl">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-xl font-bold">Meet Coco</h3>
+                        <span class="bg-[#F9F1E7] text-[#A67C52] text-xs font-bold px-3 py-1 rounded-full uppercase">text
+                        </span>
+                    </div>
+                    <p class="text-sm text-[#7D5A44] mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Location</p>
+                    <button class="w-full bg-[#FCF8F1] border border-[#E5D3BC] text-[#5C3E2E] py-2 rounded-lg font-semibold hover:bg-[#5C3E2E] hover:text-white transition-colors">Information</button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#E5D3BC]">
+                <div class="h-64 bg-[#E5D3BC] flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <img src="Images/bill.jpg" alt="An image of a golden retriever dog" class="w-full h-64 object-cover rounded-xl">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-xl font-bold">Meet Bill</h3>
+                        <span class="bg-[#F9F1E7] text-[#A67C52] text-xs font-bold px-3 py-1 rounded-full uppercase">text
+                        </span>
+                    </div>
+                    <p class="text-sm text-[#7D5A44] mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Location</p>
+                    <button class="w-full bg-[#FCF8F1] border border-[#E5D3BC] text-[#5C3E2E] py-2 rounded-lg font-semibold hover:bg-[#5C3E2E] hover:text-white transition-colors">Information</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 px-6 bg-[#F9F1E7]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black mt-2">Stories from Forever Homes</h2>
+              
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-8 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow relative">
+                   <div class="relative z-10">
+                        <p class="text-[#7D5A44] italic mb-6 leading-relaxed">
+                            "Adopting Luna was the best decision of my life. The PawConnect team made the process so smooth and supportive. She’s brought so much joy to my Brooklyn apartment!"
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-[#A67C52] rounded-full flex items-center justify-center text-white">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">Sarah Jenkins</h4>
+                                <p class="text-xs text-[#A68966]">Adopted Luna the Cat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="bg-white p-8 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow relative"> 
+                <div class="relative z-10">
+                        <p class="text-[#7D5A44] italic mb-6 leading-relaxed">
+                            "Adopting Luna was the best decision of my life. The PawConnect team made the process so smooth and supportive. She’s brought so much joy to my Brooklyn apartment!"
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-[#A67C52] rounded-full flex items-center justify-center text-white">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">Sarah Jenkins</h4>
+                                <p class="text-xs text-[#A68966]">Adopted Luna the Cat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="bg-white p-8 rounded-[2.5rem] shadow-sm hover:shadow-md transition-shadow relative">
+                    <div class="relative z-10">
+                        <p class="text-[#7D5A44] italic mb-6 leading-relaxed">
+                            "Adopting Luna was the best decision of my life. The PawConnect team made the process so smooth and supportive. She’s brought so much joy to my Brooklyn apartment!"
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-[#A67C52] rounded-full flex items-center justify-center text-white">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">Sarah Jenkins</h4>
+                                <p class="text-xs text-[#A68966]">Adopted Luna the Cat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="bg-[#5c3d2e] py-16 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <a href="#" class="flex items-center gap-2 mb-6">
+                    <i class="fas fa-paw text-2xl text-[#A67C52]"></i>
+                    <span class="text-2xl font-bold">PawConnect</span>
+                </a>
+                <p class="text-[#F9F1E7] max-w-sm mb-6">We are a non-profit organization dedicated to finding the perfect match between pets and families since 2018.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-[#E5D3BC] hover:text-[#A67C52] transition-all"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-[#E5D3BC] hover:text-[#A67C52] transition-all"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-[#E5D3BC] hover:text-[#A67C52] transition-all"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-4 text-[#F9F1E7] text-sm font-medium">
+                    <li><a href="index.html" class="hover:text-[#A67C52]">Home</a></li>
+                    <li><a href="adopt.html" class="hover:text-[#A67C52]">Adopt a Pet</a></li>
+                    <li><a href="howitworks.html" class="hover:text-[#A67C52]">How It Works</a></li>
+                    <li><a href="contact.html" class="hover:text-[#A67C52]">Contact Us</a></li>
+                  
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Contact Us</h4>
+                <ul class="space-y-4 text-[#F9F1E7] text-sm">
+                    <li><i class="fas fa-envelope mr-2"></i> hello@pawconnect.org</li>
+                    <li><i class="fas fa-phone-alt mr-2"></i> 0737771881</li>
+                    <li><i class="fas fa-clock mr-2"></i> Mon-Fri: 9am - 6pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-[#E5D3BC] text-center text-xs text-[#F9F1E7] uppercase tracking-widest">
+            &copy; 2026 PawConnect Rescue · Made with love for animals
+        </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
