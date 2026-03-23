@@ -34,10 +34,20 @@ if (btn && menu && icon) {
 }
 document.getElementById('start-adopting')?.addEventListener('click', () => {
     window.location.href = 'adopt.html';})
-document.getElementById('how-it-works')?.addEventListener('click', () => {
-    window.location.href = 'howitworks.html';})
+document.getElementById('how-it-works').addEventListener('click', function() {
+    window.scrollTo({
+        top: document.querySelector('.bg-white').offsetTop - 80, // Adjusts for sticky nav
+        behavior: 'smooth'
+    });
+});
 
 document.getElementById('thankyou')?.addEventListener('click', () => {
     window.location.href = 'thankyou.html';})
+
+const form = document.getElementById('application');
+form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    window.location.href = 'thankyou.html';
+});
 
 setActiveNavLink();
