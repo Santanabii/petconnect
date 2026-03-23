@@ -13,10 +13,16 @@ COMPREHENSIVE PET PROFILES
 -Health stats and vaccination status.
 -High-definition image galleries.
 -Direct "Apply to Adopt" call-to-actions.
+
+
 ADOPTION MADE EASIER
 A dedicated "How It Works" page that breaks down the complex legal and emotional process of adoption into four easy-to-digest steps.
+
+
 FULLY RESPONSIVE DESIGN
 Built with a mobile-first approach using Tailwind CSS, ensuring that the "warm and fuzzy" brand experience is consistent across desktops, tablets, and smartphones.
+
+
 TECHNOLOGY STACK
 HTML5: Semantic structure for accessibility and SEO.
 Tailwind CSS: Utility-first CSS framework for the custom warm-toned UI.
