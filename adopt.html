@@ -111,7 +111,7 @@
                 Step 1: Your Information
             </div>
             
-            <form id="application" action="#thankyou.html" method="get" class="p-8 md:p-12 space-y-6">
+            <form id="application" onsubmit="return handleFormSubmit()" method="get" class="p-8 md:p-12 space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="space-y-2">
                         <label class="block text-sm font-bold text-[#5C3E2E]">First Name</label>
@@ -167,6 +167,49 @@
             Having trouble? <a href="contact.html">Contact our support team</a>.
         </p>
     </main>
+    <footer class="bg-[#5c3d2e] py-16 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <a href="#" class="flex items-center gap-2 mb-6">
+                    <i class="fas fa-paw text-2xl text-[#A67C52]"></i>
+                    <span class="text-2xl font-bold">PawConnect</span>
+                </a>
+                <p class="text-[#F9F1E7] max-w-sm mb-6">We are a non-profit organization dedicated to finding the perfect match between pets and families since 2018.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-[#E5D3BC] hover:text-[#A67C52] transition-all"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-[#E5D3BC] hover:text-[#A67C52] transition-all"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-[#E5D3BC] hover:text-[#A67C52] transition-all"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-4 text-[#F9F1E7] text-sm font-medium">
+                    <li><a href="index.html" class="hover:text-[#A67C52]">Home</a></li>
+                    <li><a href="adopt.html" class="hover:text-[#A67C52]">Adopt a Pet</a></li>
+                    <li><a href="howitworks.html" class="hover:text-[#A67C52]">How It Works</a></li>
+                    <li><a href="contact.html" class="hover:text-[#A67C52]">Contact Us</a></li>
+                  
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Contact Us</h4>
+                <ul class="space-y-4 text-[#F9F1E7] text-sm">
+                    <li><i class="fas fa-envelope mr-2"></i> hello@pawconnect.org</li>
+                    <li><i class="fas fa-phone-alt mr-2"></i> 0737771881</li>
+                    <li><i class="fas fa-clock mr-2"></i> Mon-Fri: 9am - 6pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-[#E5D3BC] text-center text-xs text-[#F9F1E7] uppercase tracking-widest">
+            &copy; 2026 PawConnect Rescue · Made with love for animals
+        </div>
+    </footer>
+    <script>
+        function handleFormSubmit() {
+            window.location.href = 'thanks.html';
+            return false;
+        }
+    </script>
     <script src="script.js"></script>
 </body>
     </html>
