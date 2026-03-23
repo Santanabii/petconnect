@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PawConnect · Responsive Navbar</title>
+    <title>Pets</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -102,19 +102,14 @@
 <section class="py-12 px-6 bg-[#F9F1E7]">
         <div class="max-w-7xl mx-auto text-center">
             <h1 class="text-4xl md:text-5xl font-black text-[#5C3E2E] mb-4">Find Your New Best Friend</h1>
-            <p class="text-[#7D5A44] mb-8">Currently 124 pets are looking for their forever homes.</p>
+            <p class="text-[#7D5A44] mb-8">Currently 12 pets are looking for their forever homes.</p>
             
             <div class="max-w-4xl mx-auto bg-white p-4 rounded-2xl shadow-sm border border-[#E5D3BC] flex flex-wrap gap-4 items-center justify-between">
                 <div class="flex flex-1 gap-2 min-w-[200px]">
                     <i class="fas fa-search self-center text-[#A67C52] ml-2"></i>
-                    <input type="text" placeholder="Search by breed or name..." class="w-full outline-none text-sm text-[#5C3E2E]">
+                    <input id="pet-search" type="text" placeholder="Search by breed or name." class="w-full outline-none text-sm text-[#5C3E2E]">
                 </div>
-                <select class="bg-[#FCF8F1] px-4 py-2 rounded-lg text-sm font-semibold text-[#7D5A44] outline-none">
-                    <option>All Types</option>
-                    <option>Dogs</option>
-                    <option>Cats</option>
-                    <option>Others</option>
-                </select>
+              
                 <button class="bg-[#A67C52] text-white px-6 py-2 rounded-lg font-bold hover:bg-[#5C3E2E] transition-all">Search</button>
             </div>
         </div>
@@ -123,23 +118,23 @@
     <section class="max-w-7xl mx-auto py-16 px-6">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC] hover:shadow-xl transition-all">
+            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=500&q=80" alt="Dog" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#A67C52]">DOG</span>
+                    <img src="Images/bill.jpg" alt="Charlie" class="w-full h-full object-cover">
+                    
                 </div>
                 <div class="p-5">
                     <h3 class="text-xl font-bold text-[#5C3E2E]">Charlie</h3>
                     <p class="text-sm text-[#7D5A44] mb-4">Golden Retriever • 2 years</p>
                     <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">Charlie is a bundle of joy who loves afternoon walks and playing fetch at the park.</p>
-                    <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
+                    <button onclick="window.location.href='charlie.html'" class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
                 </div>
             </div>
 
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC] hover:shadow-xl transition-all">
+            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=500&q=80" alt="Cat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#A67C52]">CAT</span>
+                    <img src="Images/siamesecat.jpg" alt="Misty" class="w-full h-full object-cover">
+                    
                 </div>
                 <div class="p-5">
                     <h3 class="text-xl font-bold text-[#5C3E2E]">Misty</h3>
@@ -149,10 +144,9 @@
                 </div>
             </div>
 
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC] hover:shadow-xl transition-all">
+            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=500&q=80" alt="Dog" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-[#A67C52] px-3 py-1 rounded-full text-xs font-bold text-white">URGENT</span>
+                    <img src="Images/beagle.jpg" alt="Cooper" class="w-full h-full object-cover">
                 </div>
                 <div class="p-5">
                     <h3 class="text-xl font-bold text-[#5C3E2E]">Cooper</h3>
@@ -162,10 +156,10 @@
                 </div>
             </div>
 
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC] hover:shadow-xl transition-all">
+            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=500&q=80" alt="Cat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#A67C52]">CAT</span>
+                    <img src="Images/maine coon.jpg" alt="Oliver" class="w-full h-full object-cover">
+                  
                 </div>
                 <div class="p-5">
                     <h3 class="text-xl font-bold text-[#5C3E2E]">Oliver</h3>
@@ -175,10 +169,10 @@
                 </div>
             </div>
 
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC] hover:shadow-xl transition-all">
+            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=500&q=80" alt="Dog" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#A67C52]">DOG</span>
+                    <img src="Images/frenchie.jpg" alt="Bella" class="w-full h-full object-cover">
+                    
                 </div>
                 <div class="p-5">
                     <h3 class="text-xl font-bold text-[#5C3E2E]">Bella</h3>
@@ -188,10 +182,10 @@
                 </div>
             </div>
 
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC] hover:shadow-xl transition-all">
+            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1527362950785-f487a7c1fe48?auto=format&fit=crop&w=500&q=80" alt="Rabbit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#A67C52]">SMALL PET</span>
+                    <img src="Images/holland lop.jpg" alt="Thumper" class="w-full h-full object-cover">
+                   
                 </div>
                 <div class="p-5">
                     <h3 class="text-xl font-bold text-[#5C3E2E]">Thumper</h3>
@@ -201,10 +195,10 @@
                 </div>
             </div>
 
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC] hover:shadow-xl transition-all">
+            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=500&q=80" alt="Dog" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#A67C52]">DOG</span>
+                    <img src="Images/german.jpg" alt="Rex" class="w-full h-full object-cover">
+                   
                 </div>
                 <div class="p-5">
                     <h3 class="text-xl font-bold text-[#5C3E2E]">Rex</h3>
@@ -214,10 +208,10 @@
                 </div>
             </div>
 
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC] hover:shadow-xl transition-all">
+            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=500&q=80" alt="Cat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-[#A67C52]">CAT</span>
+                    <img src="Images/domestic shorthair.jpg" alt="Luna" class="w-full h-full object-cover">
+                    
                 </div>
                 <div class="p-5">
                     <h3 class="text-xl font-bold text-[#5C3E2E]">Luna</h3>
@@ -227,9 +221,85 @@
                 </div>
             </div>
 
+            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="Images/sky2.jpg" alt="Sky" class="w-full h-full object-cover">
+                    
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold text-[#5C3E2E]">Sky</h3>
+                    <p class="text-sm text-[#7D5A44] mb-4">Maltese • 2 years</p>
+                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">Sky is a gentle lap dog who loves quiet afternoons and being brushed. Perfect for apartment living.</p>
+                    <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="Images/coco.jpg" alt="Coco" class="w-full h-full object-cover">
+                    
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold text-[#5C3E2E]">Coco</h3>
+                    <p class="text-sm text-[#7D5A44] mb-4">Tabby Mix • 1 year</p>
+                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">Coco is incredibly playful and curious. She enjoys high perches and chasing laser pointers.</p>
+                    <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="Images/bill.jpg" alt="Bill" class="w-full h-full object-cover">
+                    
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold text-[#5C3E2E]">Bill</h3>
+                    <p class="text-sm text-[#7D5A44] mb-4">Golden Retriever • 4 years</p>
+                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">The ultimate family dog. Bill is great with children and already knows 'sit' and 'stay'.</p>
+                    <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
+                </div>
+            </div>
+
         </div>
     </section>
     
+    <footer class="bg-[#5c3d2e] py-16 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-2">
+                <a href="#" class="flex items-center gap-2 mb-6">
+                    <i class="fas fa-paw text-2xl text-[#A67C52]"></i>
+                    <span class="text-2xl font-bold">PawConnect</span>
+                </a>
+                <p class="text-[#F9F1E7] max-w-sm mb-6">We are a non-profit organization dedicated to finding the perfect match between pets and families since 2018.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-[#E5D3BC] hover:text-[#A67C52] transition-all"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-[#E5D3BC] hover:text-[#A67C52] transition-all"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center border border-[#E5D3BC] hover:text-[#A67C52] transition-all"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-4 text-[#F9F1E7] text-sm font-medium">
+                    <li><a href="index.html" class="hover:text-[#A67C52]">Home</a></li>
+                    <li><a href="adopt.html" class="hover:text-[#A67C52]">Adopt a Pet</a></li>
+                    <li><a href="howitworks.html" class="hover:text-[#A67C52]">How It Works</a></li>
+                    <li><a href="contact.html" class="hover:text-[#A67C52]">Contact Us</a></li>
+                  
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6">Contact Us</h4>
+                <ul class="space-y-4 text-[#F9F1E7] text-sm">
+                    <li><i class="fas fa-envelope mr-2"></i> hello@pawconnect.org</li>
+                    <li><i class="fas fa-phone-alt mr-2"></i> 0737771881</li>
+                    <li><i class="fas fa-clock mr-2"></i> Mon-Fri: 9am - 6pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-[#E5D3BC] text-center text-xs text-[#F9F1E7] uppercase tracking-widest">
+            &copy; 2026 PawConnect Rescue · Made with love for animals
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
     </html>
