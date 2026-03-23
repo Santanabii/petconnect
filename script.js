@@ -49,5 +49,69 @@ form?.addEventListener('submit', (e) => {
     e.preventDefault();
     window.location.href = 'thankyou.html';
 });
+const petSearchInput = document.getElementById('pet-search');
+const petCards = document.querySelectorAll('.grid .group');
+
+if (petSearchInput && petCards.length) {
+    const noResults = document.createElement('p');
+    noResults.id = 'no-pet-results';
+    noResults.className = 'text-center text-black mt-6';
+    noResults.textContent = 'No pets found matching your search.';
+
+    const cardsContainer = document.querySelector('.grid');
+    cardsContainer?.parentNode?.appendChild(noResults);
+    noResults.style.display = 'none';
+
+    petSearchInput.addEventListener('input', function () {
+        const query = this.value.trim().toLowerCase();
+        const breedMatches = [];
+        const nameMatches = [];
+        const otherMatches = [];
+
+        petCards.forEach((card) => {
+            const name = card.querySelector('h3')?.textContent?.toLowerCase() || '';
+            const breedInfo = card.querySelectorAll('p')[0]?.textContent?.toLowerCase() || '';
+            const description = card.querySelectorAll('p')[1]?.textContent?.toLowerCase() || '';
+            const typeLabel = card.querySelector('span')?.textContent?.toLowerCase() || '';
+
+            card.style.border = '';
+
+            if (!query) {
+                card.style.display = '';
+                return;
+            }
+
+            const isBreedMatch = breedInfo.includes(query);
+            const isNameMatch = name.includes(query);
+            const isTypeMatch = typeLabel.includes(query);
+            const isOtherMatch = description.includes(query);
+
+            if (isBreedMatch) {
+                breedMatches.push(card);
+                card.style.border = '3px solid #A67C52';
+            } else if (isNameMatch) {
+                nameMatches.push(card);
+            } else if (isTypeMatch || isOtherMatch) {
+                otherMatches.push(card);
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        if (query) {
+            petCards.forEach((card) => { if (card.style.display !== 'none') card.style.display = 'none'; });
+
+            [...breedMatches, ...nameMatches, ...otherMatches].forEach((card) => {
+                card.style.display = '';
+            });
+
+            const totalVisible = breedMatches.length + nameMatches.length + otherMatches.length;
+            noResults.style.display = totalVisible ? 'none' : '';
+        } else {
+            petCards.forEach((card) => { card.style.display = ''; });
+            noResults.style.display = 'none';
+        }
+    });
+}
 
 setActiveNavLink();
