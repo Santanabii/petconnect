@@ -3,12 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pets</title>
+    <title>Find Your New Best Friend | PawConnect</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .filter-badge {
+            padding: 10px 20px;
+            border-radius: 9999px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .filter-badge.active {
+            background-color: #5C3E2E;
+            color: white;
+            border-color: #5C3E2E;
+        }
+        .petcard {
+            transition: all 0.3s ease;
+        }
+        .petcard:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #A67C52;
+            border-radius: 20px;
+        }
+    </style>
 </head>
 <body class="bg-[#FCF8F1] font-sans">
 
+   
     <nav class="bg-[#F9F1E7] border-b border-[#E5D3BC] sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
@@ -18,110 +48,77 @@
           </a>
 
           <div class="hidden md:flex items-center gap-8">
-            <a
-              href="index.html"
-              class="text-[#5C3E2E] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
-            >
-              Home
-            </a>
-            <a
-              href="adopt.html"
-              class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
-              >Adopt</a
-            >
-            <a
-              href="pets.html"
-              class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
-              >Pets</a
-            >
-            <a
-              href="howitworks.html"
-              class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
-              >How It Works</a
-            >
-            <a
-              href="contact.html"
-              class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors"
-              >Contact</a
-            >
-            <a
-              href="adopt.html"
-              class="bg-[#A67C52] hover:bg-[#5C3E2E] text-white px-5 py-2 rounded-lg text-sm font-bold transition-all shadow-md"
-              >Adopt Me</a
-            >
+            <a href="index.html" class="text-[#5C3E2E] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors">Home</a>
+            <a href="adopt.html" class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors">Adopt</a>
+            <a href="pets.html" class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors">Pets</a>
+            <a href="howitworks.html" class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors">How It Works</a>
+            <a href="contact.html" class="text-[#7D5A44] font-semibold border-b-2 border-transparent hover:border-[#A67C52] transition-colors">Contact</a>
+            <a href="adopt.html" class="bg-[#A67C52] hover:bg-[#5C3E2E] text-white px-5 py-2 rounded-lg text-sm font-bold transition-all shadow-md">Adopt Me</a>
           </div>
 
           <div class="md:hidden flex items-center">
-            <button
-              id="mobile-menu-button"
-              class="text-[#5C3E2E] focus:outline-none p-2"
-            >
+            <button id="mobile-menu-button" class="text-[#5C3E2E] focus:outline-none p-2">
               <i class="fas fa-bars text-2xl" id="menu-icon"></i>
             </button>
           </div>
         </div>
       </div>
 
-      <div
-        id="mobile-menu"
-        class="hidden md:hidden bg-[#F9F1E7] border-t border-[#E5D3BC] pb-4 px-4 space-y-2"
-      >
-        <a
-          href="index.html"
-          class="block py-3 px-4 text-[#5C3E2E] font-semibold bg-[#FCF8F1] rounded-lg"
-          >Home</a
-        >
-        <a
-          href="adopt.html"
-          class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg"
-          >Adopt</a
-        >
-        <a
-          href="pets.html"
-          class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg"
-          >Pets</a>
-        <a
-          href="howitworks.html"
-          class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg"
-          >How It Works</a
-        >
-        <a
-          href="contact.html"
-          class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg"
-          >Contact</a
-        >
+      
+      <div id="mobile-menu" class="hidden md:hidden bg-[#F9F1E7] border-t border-[#E5D3BC] pb-4 px-4 space-y-2">
+        <a href="index.html" class="block py-3 px-4 text-[#5C3E2E] font-semibold bg-[#FCF8F1] rounded-lg">Home</a>
+        <a href="adopt.html" class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg">Adopt</a>
+        <a href="pets.html" class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg">Pets</a>
+        <a href="howitworks.html" class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg">How It Works</a>
+        <a href="contact.html" class="block py-3 px-4 text-[#7D5A44] hover:bg-[#FCF8F1] rounded-lg">Contact</a>
         <div class="pt-2">
-          <a
-            href="adopt.html"
-            class="block text-center bg-[#A67C52] text-white py-3 rounded-lg font-bold"
-            >Adopt Me</a
-          >
+          <a href="adopt.html" class="block text-center bg-[#A67C52] text-white py-3 rounded-lg font-bold">Adopt Me</a>
         </div>
       </div>
     </nav>
-<section class="py-12 px-6 bg-[#F9F1E7]">
+
+    
+    <section class="py-12 px-6 bg-[#F9F1E7]">
         <div class="max-w-7xl mx-auto text-center">
             <h1 class="text-4xl md:text-5xl font-black text-[#5C3E2E] mb-4">Find Your New Best Friend</h1>
-            <p class="text-[#7D5A44] mb-8">Currently 12 pets are looking for their forever homes.</p>
+            <p class="text-[#7D5A44] mb-8">Currently 8 pets are looking for their forever homes.</p>
             
             <div class="max-w-4xl mx-auto bg-white p-4 rounded-2xl shadow-sm border border-[#E5D3BC] flex flex-wrap gap-4 items-center justify-between">
                 <div class="flex flex-1 gap-2 min-w-[200px]">
                     <i class="fas fa-search self-center text-[#A67C52] ml-2"></i>
-                    <input id="pet-search" type="text" placeholder="Search by breed or name." class="w-full outline-none text-sm text-[#5C3E2E]">
+                    <input id="petsearch" type="text" placeholder="Search by breed or name..." 
+                           class="w-full outline-none text-sm text-[#5C3E2E]">
                 </div>
-              
-                <button class="bg-[#A67C52] text-white px-6 py-2 rounded-lg font-bold hover:bg-[#5C3E2E] transition-all">Search</button>
+                <button id="searchbtn" 
+                        class="bg-[#A67C52] text-white px-6 py-2 rounded-lg font-bold hover:bg-[#5C3E2E] transition-all">
+                    Search
+                </button>
+            </div>
+        </div>
+
+      
+        <div class="max-w-4xl mx-auto mt-8 flex flex-wrap gap-3 justify-center">
+            <div class="filter-badge active" data-filter-type="all">All</div>
+            <div class="filter-badge" data-filter-type="dog">Dogs</div>
+            <div class="filter-badge" data-filter-type="cat">Cats</div>
+            <div class="filter-badge" data-filter-type="rabbit">Rabbits</div>
+            <div class="filter-badge" id="show-shortlisted-only">
+                Shortlisted (<span id="shortlist-count-pill">0</span>)
             </div>
         </div>
     </section>
 
+   
     <section class="max-w-7xl mx-auto py-16 px-6">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
+
+           
+            <div class="petcard" data-type="dog" data-name="Charlie" data-breed="Golden Retriever" class="bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
                 <div class="relative h-64 overflow-hidden">
                     <img src="Images/bill.jpg" alt="Charlie" class="w-full h-full object-cover">
-                    
+                    <button class="likebtn absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-[#7D5A44] hover:text-red-500 transition-colors shadow-md">
+                        <i class="far fa-heart text-xl"></i>
+                    </button>
                 </div>
                 <div class="p-5">
                     <h3 class="text-xl font-bold text-[#5C3E2E]">Charlie</h3>
@@ -131,10 +128,14 @@
                 </div>
             </div>
 
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
+            
+
+            <div class="petcard" data-type="cat" data-name="Misty" data-breed="Siamese Mix" class="bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
                 <div class="relative h-64 overflow-hidden">
                     <img src="Images/siamesecat.jpg" alt="Misty" class="w-full h-full object-cover">
-                    
+                    <button class="likebtn absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-[#7D5A44] hover:text-red-500 transition-colors shadow-md">
+                        <i class="far fa-heart text-xl"></i>
+                    </button>
                 </div>
                 <div class="p-5">
                     <h3 class="text-xl font-bold text-[#5C3E2E]">Misty</h3>
@@ -144,129 +145,99 @@
                 </div>
             </div>
 
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
+             <div class="petcard" data-type="dog" data-name="Jiji" data-breed="Beagle" class="bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="Images/beagle.jpg" alt="Cooper" class="w-full h-full object-cover">
+                    <img src="Images/beagle.jpg" alt="Jiji" class="w-full h-full object-cover">
+                    <button class="likebtn absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-[#7D5A44] hover:text-red-500 transition-colors shadow-md">
+                        <i class="far fa-heart text-xl"></i>
+                    </button>
                 </div>
                 <div class="p-5">
-                    <h3 class="text-xl font-bold text-[#5C3E2E]">Cooper</h3>
-                    <p class="text-sm text-[#7D5A44] mb-4">Beagle • 5 years</p>
-                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">Cooper is a gentle soul who needs a calm home. He's great with seniors and other dogs.</p>
+                    <h3 class="text-xl font-bold text-[#5C3E2E]">Jiji</h3>
+                    <p class="text-sm text-[#7D5A44] mb-4">Beagle • 6 year</p>
+                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">A quiet observer, Jiji loves sunny spots and will purr the moment you touch her.</p>
                     <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
                 </div>
             </div>
-
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
+ <div class="petcard" data-type="dog" data-name="Bob" data-breed="German Shepherd" class="bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="Images/maine coon.jpg" alt="Oliver" class="w-full h-full object-cover">
-                  
+                    <img src="Images/german.jpg" alt="Bob" class="w-full h-full object-cover">
+                    <button class="likebtn absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-[#7D5A44] hover:text-red-500 transition-colors shadow-md">
+                        <i class="far fa-heart text-xl"></i>
+                    </button>
                 </div>
                 <div class="p-5">
-                    <h3 class="text-xl font-bold text-[#5C3E2E]">Oliver</h3>
-                    <p class="text-sm text-[#7D5A44] mb-4">Maine Coon • 3 years</p>
-                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">A giant fluffball! Oliver is very social and loves being the center of attention.</p>
+                    <h3 class="text-xl font-bold text-[#5C3E2E]">Bob</h3>
+                    <p class="text-sm text-[#7D5A44] mb-4">German Shepherd • 5 year</p>
+                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">A loyal companion, Bob enjoys long walks and playing fetch in the backyard.</p>
                     <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
                 </div>
             </div>
-
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
+            
+ <div class="petcard" data-type="cat" data-name="Coco" data-breed="Domestic Shorthair" class="bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="Images/frenchie.jpg" alt="Bella" class="w-full h-full object-cover">
-                    
-                </div>
-                <div class="p-5">
-                    <h3 class="text-xl font-bold text-[#5C3E2E]">Bella</h3>
-                    <p class="text-sm text-[#7D5A44] mb-4">Frenchie • 1 year</p>
-                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">Bella is high energy and loves hiking. She needs an active family to keep up with her!</p>
-                    <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
-                </div>
-            </div>
-
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/holland lop.jpg" alt="Thumper" class="w-full h-full object-cover">
-                   
-                </div>
-                <div class="p-5">
-                    <h3 class="text-xl font-bold text-[#5C3E2E]">Thumper</h3>
-                    <p class="text-sm text-[#7D5A44] mb-4">Holland Lop • 6 months</p>
-                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">Thumper is curious and sweet. He loves fresh greens and gentle head scratches.</p>
-                    <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
-                </div>
-            </div>
-
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/german.jpg" alt="Rex" class="w-full h-full object-cover">
-                   
-                </div>
-                <div class="p-5">
-                    <h3 class="text-xl font-bold text-[#5C3E2E]">Rex</h3>
-                    <p class="text-sm text-[#7D5A44] mb-4">German Shepherd • 4 years</p>
-                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">A loyal protector who is incredibly smart. Rex is already trained in basic commands.</p>
-                    <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
-                </div>
-            </div>
-
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/domestic shorthair.jpg" alt="Luna" class="w-full h-full object-cover">
-                    
-                </div>
-                <div class="p-5">
-                    <h3 class="text-xl font-bold text-[#5C3E2E]">Luna</h3>
-                    <p class="text-sm text-[#7D5A44] mb-4">Domestic Shorthair • 2 years</p>
-                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">Luna is very playful and gets along perfectly with kids. She's the ultimate family cat.</p>
-                    <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
-                </div>
-            </div>
-
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/sky2.jpg" alt="Sky" class="w-full h-full object-cover">
-                    
-                </div>
-                <div class="p-5">
-                    <h3 class="text-xl font-bold text-[#5C3E2E]">Sky</h3>
-                    <p class="text-sm text-[#7D5A44] mb-4">Maltese • 2 years</p>
-                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">Sky is a gentle lap dog who loves quiet afternoons and being brushed. Perfect for apartment living.</p>
-                    <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
-                </div>
-            </div>
-
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="Images/coco.jpg" alt="Coco" class="w-full h-full object-cover">
-                    
+                    <img src="Images/domestic shorthair.jpg" alt="Coco" class="w-full h-full object-cover">
+                    <button class="likebtn absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-[#7D5A44] hover:text-red-500 transition-colors shadow-md">
+                        <i class="far fa-heart text-xl"></i>
+                    </button>
                 </div>
                 <div class="p-5">
                     <h3 class="text-xl font-bold text-[#5C3E2E]">Coco</h3>
-                    <p class="text-sm text-[#7D5A44] mb-4">Tabby Mix • 1 year</p>
-                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">Coco is incredibly playful and curious. She enjoys high perches and chasing laser pointers.</p>
+                    <p class="text-sm text-[#7D5A44] mb-4">Domestic Shorthair • 2 year</p>
+                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">A playful companion, Coco loves to chase toys and nap in cozy spots around the house.</p>
                     <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
                 </div>
             </div>
-
-            <div class="group bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
+             <div class="petcard" data-type="rabbit" data-name="Hoppy" data-breed="Holland lop" class="bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="Images/bill.jpg" alt="Bill" class="w-full h-full object-cover">
-                    
+                    <img src="Images/holland lop.jpg" alt="Hoppy" class="w-full h-full object-cover">
+                    <button class="likebtn absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-[#7D5A44] hover:text-red-500 transition-colors shadow-md">
+                        <i class="far fa-heart text-xl"></i>
+                    </button>
                 </div>
                 <div class="p-5">
-                    <h3 class="text-xl font-bold text-[#5C3E2E]">Bill</h3>
-                    <p class="text-sm text-[#7D5A44] mb-4">Golden Retriever • 4 years</p>
-                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">The ultimate family dog. Bill is great with children and already knows 'sit' and 'stay'.</p>
+                    <h3 class="text-xl font-bold text-[#5C3E2E]">Hoppy</h3>
+                    <p class="text-sm text-[#7D5A44] mb-4">Holland lop • 6 months</p>
+                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">A quiet observer, Hoppy loves sunny spots and will purr the moment you touch her.</p>
                     <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
                 </div>
             </div>
-
+             <div class="petcard" data-type="cat" data-name="Fuzzy" data-breed="Maine Coon" class="bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="Images/maine coon.jpg" alt="Fuzzy" class="w-full h-full object-cover">
+                    <button class="likebtn absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-[#7D5A44] hover:text-red-500 transition-colors shadow-md">
+                        <i class="far fa-heart text-xl"></i>
+                    </button>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold text-[#5C3E2E]">Fuzzy</h3>
+                    <p class="text-sm text-[#7D5A44] mb-4">Maine Coon • 2 years</p>
+                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">A gentle giant, Fuzzy is known for his friendly nature and love of attention.</p>
+                    <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
+                </div>
+            </div>
+             <div class="petcard" data-type="dog" data-name="Frank" data-breed="French Bulldog" class="bg-white rounded-3xl overflow-hidden border border-[#E5D3BC]">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="Images/frenchie.jpg" alt="Frank" class="w-full h-full object-cover">
+                    <button class="likebtn absolute top-4 right-4 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-[#7D5A44] hover:text-red-500 transition-colors shadow-md">
+                        <i class="far fa-heart text-xl"></i>
+                    </button>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold text-[#5C3E2E]">Frank</h3>
+                    <p class="text-sm text-[#7D5A44] mb-4">French Bulldog • 3 years</p>
+                    <p class="text-xs text-[#7D5A44] line-clamp-2 mb-4">A playful companion, Frank is known for his affectionate nature and love of belly rubs.</p>
+                    <button class="w-full py-2 bg-[#F9F1E7] text-[#5C3E2E] rounded-xl font-bold hover:bg-[#5C3E2E] hover:text-white transition-colors">View Profile</button>
+                </div>
+            </div>
         </div>
     </section>
-    
+
+    <!-- footer -->
     <footer class="bg-[#5c3d2e] py-16 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
             <div class="col-span-1 md:col-span-2">
-                <a href="#" class="flex items-center gap-2 mb-6">
+                <a href="index.html" class="flex items-center gap-2 mb-6">
                     <i class="fas fa-paw text-2xl text-[#A67C52]"></i>
                     <span class="text-2xl font-bold">PawConnect</span>
                 </a>
@@ -284,7 +255,6 @@
                     <li><a href="adopt.html" class="hover:text-[#A67C52]">Adopt a Pet</a></li>
                     <li><a href="howitworks.html" class="hover:text-[#A67C52]">How It Works</a></li>
                     <li><a href="contact.html" class="hover:text-[#A67C52]">Contact Us</a></li>
-                  
                 </ul>
             </div>
             <div>
@@ -297,9 +267,39 @@
             </div>
         </div>
         <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-[#E5D3BC] text-center text-xs text-[#F9F1E7] uppercase tracking-widest">
-            &copy; 2026 PawConnect Rescue · Made with love for animals
+            © 2026 PawConnect Rescue · Made with love for animals
         </div>
     </footer>
+
+    <!-- sidebar -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60] hidden transition-opacity duration-300 opacity-0"></div>
+
+    <div id="shortlist-sidebar" class="fixed top-0 right-0 h-full w-full max-w-sm bg-[#FCF8F1] z-[70] shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-[#E5D3BC]">
+        <div class="p-6 flex flex-col h-full">
+            <div class="flex justify-between items-center border-b border-[#E5D3BC] pb-4 mb-6">
+                <h2 class="text-2xl font-black text-[#5C3E2E] flex items-center gap-2">
+                    My Favorites
+                </h2>
+                <button id="close-sidebar" class="text-[#A67C52] hover:text-[#5C3E2E] text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div id="shortlist-items-container" class="flex-1 overflow-y-auto space-y-4 pr-2 custom-scrollbar">
+                <div id="empty-shortlist-msg" class="text-center py-10">
+                    <p class="text-[#7D5A44] font-medium">Your shortlist is empty.<br>Go find some furry friends!</p>
+                </div>
+            </div>
+
+            <div class="pt-6 border-t border-[#E5D3BC]">
+                <a href="adopt.html" class="block w-full py-4 bg-[#A67C52] text-white text-center rounded-2xl font-black hover:bg-[#5C3E2E] transition-all shadow-lg">
+                    Proceed to Adoption
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
     <script src="script.js"></script>
 </body>
-    </html>
+</html>
