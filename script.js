@@ -1,12 +1,10 @@
-// ======================
-//  GLOBAL UTILITIES
-// ======================
+
 
 const btn = document.getElementById('mobile-menu-button');
 const menu = document.getElementById('mobile-menu');
 const icon = document.getElementById('menu-icon');
 
-// Mobile Menu Toggle
+
 if (btn && menu && icon) {
     btn.addEventListener('click', () => {
         const isHidden = menu.classList.toggle('hidden');
@@ -19,16 +17,14 @@ if (btn && menu && icon) {
     });
 }
 
-// ======================
-//  NAV ACTIVE LINK
-// ======================
+
 
 function setActiveNavLink() {
     const currentPath = window.location.pathname.toLowerCase();
     const currentPage = currentPath.split('/').pop() || 'index.html';
 
     document.querySelectorAll('nav a').forEach(link => {
-        // Skip special links (paw icon, application anchor)
+        
         if (link.querySelector('i.fas.fa-paw') || link.href.includes('#application')) {
             return;
         }
@@ -37,23 +33,21 @@ function setActiveNavLink() {
         const linkPage = linkPath.split('/').pop() || 'index.html';
 
         if (linkPage === currentPage) {
-            // Active styles
+           
             link.classList.remove('text-[#7D5A44]', 'border-transparent');
             link.classList.add('text-[#5C3E2E]', 'font-semibold', 'border-b-2', 'border-[#A67C52]', 'bg-[#FCF8F1]');
         } else {
-            // Reset inactive styles
+            
             link.classList.remove('text-[#5C3E2E]', 'font-semibold', 'border-b-2', 'border-[#A67C52]', 'bg-[#FCF8F1]');
             link.classList.add('text-[#7D5A44]', 'border-transparent');
         }
     });
 }
 
-// ======================
-//  PAGE-SPECIFIC HANDLERS
-// ======================
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Quick navigation buttons
+    
     document.getElementById('start-adopting')?.addEventListener('click', () => {
         window.location.href = 'adopt.html';
     });
@@ -61,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('how-it-works')?.addEventListener('click', () => {
         const target = document.querySelector('.bg-white');
         if (target) {
-            const offset = 80; // sticky nav height
+            const offset = 80; 
             const topPosition = target.getBoundingClientRect().top + window.scrollY - offset;
             window.scrollTo({ top: topPosition, behavior: 'smooth' });
         }
@@ -71,19 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'thankyou.html';
     });
 
-    // Application Form
+    
     const form = document.getElementById('application');
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            // You can add form validation here later
+            
             window.location.href = 'thankyou.html';
         });
     }
 
-    // ======================
-    //  ADOPT PAGE LOGIC
-    // ======================
+    
 
     const searchInput = document.getElementById('petsearch');
     const searchBtn = document.getElementById('searchbtn');
@@ -100,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let shortlistedPets = [];
 
-    // Search & Filter
+    
     const filterPets = () => {
         const query = searchInput?.value.toLowerCase().trim() || '';
 
@@ -121,10 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Category Filter Badges
+    
     filterBadges.forEach(badge => {
         badge.addEventListener('click', () => {
-            // Skip shortlist button
+           
             if (badge.id === 'show-shortlisted-only') return;
 
             filterBadges.forEach(b => b.classList.remove('active'));
@@ -139,13 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Update Shortlist UI
     const updateShortlistUI = () => {
         if (!shortlistCountPill) return;
 
         shortlistCountPill.textContent = shortlistedPets.length;
 
-        // Clear previous items
+       
         shortlistItemsContainer?.querySelectorAll('.shortlist-item').forEach(item => item.remove());
 
         if (shortlistedPets.length === 0) {
@@ -168,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Like / Shortlist Buttons
+  
     document.querySelectorAll('.likebtn').forEach(btn => {
         btn.addEventListener('click', function () {
             const card = this.closest('.petcard');
@@ -188,11 +179,11 @@ document.addEventListener('DOMContentLoaded', () => {
             this.classList.toggle('text-red-500');
 
             if (isNowLiked) {
-                // Add to shortlist
+                
                 shortlistedPets.push(petData);
                 showToast(`${petData.name} added to favorites!`);
             } else {
-                // Remove from shortlist
+                
                 shortlistedPets = shortlistedPets.filter(p => p.name !== petData.name);
                 showToast(`${petData.name} removed from favorites`);
             }
@@ -201,13 +192,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Sidebar Controls
+    
     const toggleSidebar = (show) => {
         if (!sidebar || !sidebarOverlay) return;
 
         if (show) {
             sidebarOverlay.classList.remove('hidden');
-            // Trigger reflow
+            
             requestAnimationFrame(() => {
                 sidebarOverlay.classList.remove('opacity-0');
                 sidebar.classList.remove('translate-x-full');
@@ -225,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeSidebar?.addEventListener('click', () => toggleSidebar(false));
     sidebarOverlay?.addEventListener('click', () => toggleSidebar(false));
 
-    // Toast Notification
+   
     function showToast(message) {
         const toast = document.createElement('div');
         toast.className = `
@@ -243,9 +234,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2200);
     }
 
-    // Initial calls
+   
     updateShortlistUI();
 });
 
-// Run active nav link on every page
+
 setActiveNavLink();
